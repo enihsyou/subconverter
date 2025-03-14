@@ -1,0 +1,46 @@
+name: Deploy to Gist
+on:
+  push:
+    branches: [$default-branch]
+
+env:
+  SUBCONVERTER_VERSION: v0.9.0
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download subconverter
+        run: |
+          wget https://github.com/tindy2013/subconverter/releases/download/${{ env.SUBCONVERTER_VERSION }}/subconverter_linux64.tar.gz
+          tar -xzf subconverter_linux64.tar.gz --strip-components=1 subconverter/subconverter
+          chmod +x subconverter
+
+      - name: Create merlinclash.yaml
+        env:
+          SUBCONVERTER_SUBSCRIPTION_URL: ${{ secrets.SUBSCRIPTION_URL }}
+        run: |
+          ./subconverter -g
+     
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+
+      - name: Rules deduplicate 
+        run: |
+          uv venv
+          uv pip install ruamel.yaml
+          uv run scripts/deduplicate_rules.py merlinclash.yaml --inplace
+
+      - name: Deploy to Gist
+        uses: exuanbo/actions-deploy-gist@v1
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_ID }}
+          file_path: merlinclash.yaml
