@@ -1,0 +1,17 @@
+# 脚本环境
+.venv
+
+# 运行时缓存
+cache
+
+# 可重复下载
+subconverter.exe
+subconverter_win64.7z
+
+# 这是生成文件
+merlinclash.yaml
+merlinclash_deduplicated.yaml
+
+# 文件有密钥
+gistconf.ini
+.subconverter_env

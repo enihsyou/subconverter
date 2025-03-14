@@ -1,0 +1,47 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "generate merlinclash.yaml",
+            "type": "process",
+            "command": "make",
+            "args": [
+                "merlinclash.yaml"
+            ],
+            "presentation": {
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "deduplicate merlinclash.yaml",
+            "type": "process",
+            "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "args": [
+                "${workspaceFolder}/scripts/deduplicate_rules.py",
+                "${workspaceFolder}/merlinclash.yaml"
+            ],
+            "presentation": {
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "upload merlinclash.yaml",
+            "type": "process",
+            "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "args": [
+                "${workspaceFolder}/scripts/gist_uploader.py",
+                "${workspaceFolder}/merlinclash_deduplicated.yaml",
+                "--filename",
+                "merlinclash.yaml"
+            ],
+            "presentation": {
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
