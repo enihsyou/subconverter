@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Cache subconverter
         id: cache-subconverter
@@ -53,6 +51,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           version: 0.6.6
+          cache-dependency-glob: scripts/*.py
 
       - name: Rules deduplicate
         env:
