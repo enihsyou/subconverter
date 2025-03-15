@@ -40,29 +40,15 @@ make gistconf.ini
 ### 只使用规则
 
 参考 [Merlin Clash Wiki - 高级订阅方式](https://mcreadme.gitbook.io/mc/base/subscribe#gao-ji-ding-yue-fang-shi) 所述的界面截图，
-在 **<ins>远程配置</ins>** 一栏填上 [subconverter-config.ini](subconverter-config.ini) 的 Raw 文件地址，并 **<ins>勾选使用</ins>**。
-
-```plaintext
-https://github.com/enihsyou/subconverter/tree/main/subconverter-config.ini
-```
-
-其他配置我一般这样选
-
-- [ ] emoji
-- [x] 启用udp
-- [ ] 节点类型
-- [ ] 节点排序
-- [ ] 过滤非法节点
-- [ ] 跳过证书验证
-- [x] TCP Fast Open
-
-### 使用包含节点的订阅
-
-同样参考界面截图，在 **<ins>Clash订阅下载</ins>** 一栏填上 Gist 的 Raw 文件地址，再点击 **<ins>Clash订阅</ins>**。
+在 **<ins>Clash订阅下载</ins>** 一栏填上 Gist 的 Raw 文件地址，再点击 **<ins>Clash订阅</ins>**。
 
 Gist 的地址应该是已知的，或者提前 `make gist` 过了。因为 Gist 内容带有订阅链接所以不能在这里贴出来。
 
 如果有鸡生蛋蛋生鸡的网络问题，手动下载订阅文件并使用 **导入Clash配置文件** 功能吧😅
+
+不过当你在 Gist 上点击 `Raw` 按钮获取文件 URL 时，它返回的是当前这个 revision 的永久链接，
+而这里需要的应该是 latest 版本，好在 [StackOverflow](https://stackoverflow.com/a/47175630/5277711) 给出了方法，
+把 `[gist commit ID]` 部分删掉即可。
 
 ## 本仓库都做了什么
 

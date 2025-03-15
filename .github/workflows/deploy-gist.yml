@@ -2,6 +2,9 @@ name: Deploy to Gist
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - README.md
+      - LICENCE
 
 env:
   SUBCONVERTER_VERSION: v0.9.0
