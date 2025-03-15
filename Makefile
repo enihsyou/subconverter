@@ -41,4 +41,3 @@ clean:
 	del /Q subconverter.exe
 	del /Q merlinclash.yaml
 	del /Q merlinclash_deduplicated.yaml
-

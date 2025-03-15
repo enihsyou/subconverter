@@ -18,24 +18,9 @@
         {
             "label": "deduplicate merlinclash.yaml",
             "type": "process",
-            "command": ".venv/Scripts/python.exe",
+            "command": "make",
             "args": [
-                "scripts/deduplicate_rules.py",
-                "merlinclash.yaml",
-                "--in-place"
-            ],
-            "presentation": {
-                "clear": true
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "upload merlinclash.yaml",
-            "type": "process",
-            "command": ".venv/Scripts/python.exe",
-            "args": [
-                "scripts/gist_uploader.py",
-                "merlinclash.yaml"
+                "merlinclash_deduplicated.yaml"
             ],
             "presentation": {
                 "clear": true

@@ -1,5 +1,7 @@
 # My Subconverter Profile
 
+[![Deploy to Gist](https://github.com/enihsyou/subconverter/actions/workflows/deploy-gist.yml/badge.svg)](https://github.com/enihsyou/subconverter/actions/workflows/deploy-gist.yml)
+
 可以投喂给 subconverter 的配置文件，用于跑在 RT-AX86U 上的 Merlin Clash。
 
 - 适合中国大陆网络环境，移除了广告拦截、网易音乐，补上大集合漏的部分
@@ -14,10 +16,15 @@
 make subconverter.exe
 make merlinclash_deduplicated.yaml
 make gistconf.ini
-make gist
 ```
 
 更多地是使用 [GitHub Actions](.github/workflows/deploy-gist.yml) 在 Linux 环境自动构建。
+
+需要配置几个机密变量
+
+- `GIST_ID` 上传目标的 Gist ID，需要提前存在
+- `GIST_TOKEN` 上传用的 Gist token，可在[GitHub Settings](https://github.com/settings/tokens/new?scopes=gist&description=Subconverter)创建
+- `SUBSCRIPTION_URL` 机场订阅链接
 
 ## 如何在 Merlin Clash 应用
 
@@ -44,7 +51,7 @@ https://github.com/enihsyou/subconverter/tree/main/subconverter-config.ini
 
 同样参考界面截图，在 **<ins>Clash订阅下载</ins>** 一栏填上 Gist 的 Raw 文件地址，再点击 **<ins>Clash订阅</ins>**。
 
-Gist 的地址应该是已知的，或者提前 `make gist` 过了。
+Gist 的地址应该是已知的，或者提前 `make gist` 过了。因为 Gist 内容带有订阅链接所以不能在这里贴出来。
 
 如果有鸡生蛋蛋生鸡的网络问题，手动下载订阅文件并使用 **导入Clash配置文件** 功能吧😅
 
@@ -76,11 +83,3 @@ Gist 的地址应该是已知的，或者提前 `make gist` 过了。
 为了让生成的配置清爽一些，编写了 [deduplicate_rules.py](scripts/deduplicate_rules.py) 去除重复的规则条目，只保留第一个条目。
 
 使用 `make merlinclash_deduplicated.yaml` 就能运行它。
-
-### 上传 Gist
-
-最终的结果，不会自动上传到 Gist，需要从 [gistconf.example.ini](gistconf.example.ini) 复制出`gistconf.ini` 文件，填入你的 Gist token。
-
-注意 gist token 有效期，可在[GitHub Settings](https://github.com/settings/tokens/new?scopes=gist&description=Subconverter)创建
-
-运行 `make gist` 就会自动上传到 Gist，获得一条 URL。
