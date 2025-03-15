@@ -18,10 +18,11 @@
         {
             "label": "deduplicate merlinclash.yaml",
             "type": "process",
-            "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "command": ".venv/Scripts/python.exe",
             "args": [
-                "${workspaceFolder}/scripts/deduplicate_rules.py",
-                "${workspaceFolder}/merlinclash.yaml"
+                "scripts/deduplicate_rules.py",
+                "merlinclash.yaml",
+                "--in-place"
             ],
             "presentation": {
                 "clear": true
@@ -31,11 +32,9 @@
         {
             "label": "upload merlinclash.yaml",
             "type": "process",
-            "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "command": ".venv/Scripts/python.exe",
             "args": [
-                "${workspaceFolder}/scripts/gist_uploader.py",
-                "${workspaceFolder}/merlinclash_deduplicated.yaml",
-                "--filename",
+                "scripts/gist_uploader.py",
                 "merlinclash.yaml"
             ],
             "presentation": {

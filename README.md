@@ -8,7 +8,7 @@
 
 ## 如何生成 Clash 配置文件
 
-这是几个主要步骤
+在 Windows 本地运行这是几个主要步骤
 
 ```shell-session
 make subconverter.exe
@@ -17,12 +17,18 @@ make gistconf.ini
 make gist
 ```
 
+更多地是使用 [GitHub Actions](.github/workflows/deploy-gist.yml) 在 Linux 环境自动构建。
+
 ## 如何在 Merlin Clash 应用
 
-参考 [Merlin Clash Wiki - 高级订阅方式](https://mcreadme.gitbook.io/mc/base/subscribe#gao-ji-ding-yue-fang-shi) 所述的界面截图，
-在 **<ins>远程配置</ins>** 一栏填上 Gist 的 Raw 文件地址，并**<ins>勾选使用</ins>**。
+### 只使用规则
 
-Gist 地址可以由 `make gist` 获取，或者查看你的 `gistconf.ini` 文件。
+参考 [Merlin Clash Wiki - 高级订阅方式](https://mcreadme.gitbook.io/mc/base/subscribe#gao-ji-ding-yue-fang-shi) 所述的界面截图，
+在 **<ins>远程配置</ins>** 一栏填上 [subconverter-config.ini](subconverter-config.ini) 的 Raw 文件地址，并**<ins>勾选使用</ins>**。
+
+```plaintext
+https://github.com/enihsyou/subconverter/tree/main/subconverter-config.ini
+```
 
 其他配置我一般这样选
 
@@ -33,6 +39,14 @@ Gist 地址可以由 `make gist` 获取，或者查看你的 `gistconf.ini` 文�
 - [ ] 过滤非法节点
 - [ ] 跳过证书验证
 - [x] TCP Fast Open
+
+### 使用包含节点的订阅
+
+同样参考界面截图，在 **<ins>Clash订阅下载</ins>** 一栏填上 Gist 的 Raw 文件地址，再点击**<ins>Clash订阅</ins>**。
+
+Gist 的地址应该是已知的，或者提前 `make gist` 过了。
+
+如果有鸡生蛋蛋生鸡的网络问题，手动下载订阅文件并使用 **导入Clash配置文件** 功能吧😅
 
 ## 本仓库都做了什么
 

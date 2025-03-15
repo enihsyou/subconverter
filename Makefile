@@ -26,7 +26,7 @@ merlinclash.yaml:
 	.\subconverter.exe -g
 
 merlinclash_deduplicated.yaml: merlinclash.yaml
-	uv pip install ruamel.yaml
+	uv pip install ruamel-yaml==0.18.10
 	uv run scripts/deduplicate_rules.py $<
 
 gistconf.ini:

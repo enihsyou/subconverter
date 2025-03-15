@@ -13,30 +13,53 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Cache subconverter
+        id: cache-subconverter
+        uses: actions/cache@v4
+        with:
+          path: subconverter
+          key: subconverter-${{ env.SUBCONVERTER_VERSION }}-${{ runner.os }}-${{ runner.arch }}
 
       - name: Download subconverter
+        uses: robinraju/release-downloader@v1
+        if: ${{ steps.cache-subconverter.outputs.cache-hit != 'true' }}
+        with:
+          repository: tindy2013/subconverter
+          tag: ${{ env.SUBCONVERTER_VERSION }}
+          fileName: subconverter_linux64.tar.gz
+
+      - name: Extract subconverter
+        if: ${{ hashFiles('subconverter') == '' }}
         run: |
-          wget https://github.com/tindy2013/subconverter/releases/download/${{ env.SUBCONVERTER_VERSION }}/subconverter_linux64.tar.gz
           tar -xzf subconverter_linux64.tar.gz --strip-components=1 subconverter/subconverter
           chmod +x subconverter
-
+          rm subconverter_linux64.tar.gz
+          
       - name: Create merlinclash.yaml
         env:
           SUBCONVERTER_SUBSCRIPTION_URL: ${{ secrets.SUBSCRIPTION_URL }}
         run: |
           ./subconverter -g
-     
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
 
       - name: Set up Python
         uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
 
-      - name: Rules deduplicate 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: 0.6.6
+
+      - name: Rules deduplicate
+        env:
+          UV_SYSTEM_PYTHON: 1
         run: |
-          uv venv
-          uv pip install ruamel.yaml
-          uv run scripts/deduplicate_rules.py merlinclash.yaml --inplace
+          uv pip install ruamel-yaml==0.18.10
+          uv run scripts/deduplicate_rules.py merlinclash.yaml --in-place
 
       - name: Deploy to Gist
         uses: exuanbo/actions-deploy-gist@v1

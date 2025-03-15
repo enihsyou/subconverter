@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 虽然 subconverter 已经有 upload 能力了，本脚本是用于上传任意文件
+# 特别是 deduplicate 之后的。功能由 Claude 3.7 Sonnet 实现
 
 import sys
 import configparser
