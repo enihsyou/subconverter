@@ -24,7 +24,7 @@ make gist
 ### 只使用规则
 
 参考 [Merlin Clash Wiki - 高级订阅方式](https://mcreadme.gitbook.io/mc/base/subscribe#gao-ji-ding-yue-fang-shi) 所述的界面截图，
-在 **<ins>远程配置</ins>** 一栏填上 [subconverter-config.ini](subconverter-config.ini) 的 Raw 文件地址，并**<ins>勾选使用</ins>**。
+在 **<ins>远程配置</ins>** 一栏填上 [subconverter-config.ini](subconverter-config.ini) 的 Raw 文件地址，并 **<ins>勾选使用</ins>**。
 
 ```plaintext
 https://github.com/enihsyou/subconverter/tree/main/subconverter-config.ini
@@ -42,7 +42,7 @@ https://github.com/enihsyou/subconverter/tree/main/subconverter-config.ini
 
 ### 使用包含节点的订阅
 
-同样参考界面截图，在 **<ins>Clash订阅下载</ins>** 一栏填上 Gist 的 Raw 文件地址，再点击**<ins>Clash订阅</ins>**。
+同样参考界面截图，在 **<ins>Clash订阅下载</ins>** 一栏填上 Gist 的 Raw 文件地址，再点击 **<ins>Clash订阅</ins>**。
 
 Gist 的地址应该是已知的，或者提前 `make gist` 过了。
 

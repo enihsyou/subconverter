@@ -1,7 +1,7 @@
 name: Deploy to Gist
 on:
   push:
-    branches: [$default-branch]
+    branches: [main]
 
 env:
   SUBCONVERTER_VERSION: v0.9.0
