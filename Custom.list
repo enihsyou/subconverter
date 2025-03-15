@@ -1,6 +1,7 @@
-DOMAIN-SUFFIX,x.ai,🧵 自定规则
-DOMAIN-SUFFIX,greasyfork.org,🧵 自定规则
-DOMAIN-SUFFIX,formulae.brew.sh,🧵 自定规则
-DOMAIN-SUFFIX,pythonhosted.org,🧵 自定规则
-DOMAIN-SUFFIX,pypi.org,🧵 自定规则
-DOMAIN-SUFFIX,packages.synocommunity.com,🧵 自定规则
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,greasyfork.org
+DOMAIN-SUFFIX,formulae.brew.sh
+DOMAIN-SUFFIX,pythonhosted.org
+DOMAIN-SUFFIX,pypi.org
+DOMAIN-SUFFIX,packages.synocommunity.com
+DOMAIN-SUFFIX,dash.cloudflare.com
