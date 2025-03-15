@@ -2,11 +2,20 @@
 
 [![Deploy to Gist](https://github.com/enihsyou/subconverter/actions/workflows/deploy-gist.yml/badge.svg)](https://github.com/enihsyou/subconverter/actions/workflows/deploy-gist.yml)
 
-可以投喂给 subconverter 的配置文件，用于跑在 RT-AX86U 上的 Merlin Clash。
+可以投喂给 subconverter 的配置文件，用于跑在 Merlin Clash 上。
 
-- 适合中国大陆网络环境，移除了广告拦截、网易音乐，补上大集合漏的部分
-- 使用 .env 文件保存订阅链接，整个代码库可公开上传
+- 目标中国大陆网络环境，补上大集合漏的部分
+- 适合低功耗设备，移除了广告拦截等巨大规则集
+- 使用 .env 文件或环境变量传递订阅链接，整个代码库可公开上传
 - 自动发布到私有 Gist 给 Merlin Clash 使用
+
+## 为什么有这个项目
+
+目前 Merlin Clash 有非常方便的图形界面设置 [自定规则](https://mcreadme.gitbook.io/mc/advanced/custom)，
+但是实现上它是把每条规则一点点 `sed` 合并进 clash 配置文件里的，在 RT-AX86U 上添加 15 条规则花费 30s。
+
+因为不能动态添加规则，有时遇到无法访问的网站我会手动添加一些，再等待系统花费 60s+ 重启。
+这速度肯定能提升，把自定义规则提前写到配置文件里就好了，所以有了本项目。
 
 ## 如何生成 Clash 配置文件
 
