@@ -17,6 +17,8 @@
 因为不能动态添加规则，有时遇到无法访问的网站我会手动添加一些，再等待系统花费 60s+ 重启。
 这速度肯定能提升，把自定义规则提前写到配置文件里就好了，所以有了本项目。
 
+从大的规则仓库里挑拣日常需要用到的规则，并使用 subconverter 转换为 Merlin Clash 的配置文件。
+
 ## 如何生成 Clash 配置文件
 
 在 Windows 本地运行这是几个主要步骤
@@ -78,3 +80,13 @@ Gist 的地址应该是已知的，或者提前 `make gist` 过了。因为 Gist
 为了让生成的配置清爽一些，编写了 [deduplicate_rules.py](scripts/deduplicate_rules.py) 去除重复的规则条目，只保留第一个条目。
 
 使用 `make merlinclash_deduplicated.yaml` 就能运行它。
+
+## 引用致谢
+
+感谢这些仓库贡献者提供的代码和思路，也推荐使用者了解这些仓库提供的规则以供未来扩展。
+
+- [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR) 提供大量规则
+- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) 及时地更新最新规则
+- [tindy2013/subconverter](https://github.com/tindy2013/subconverter) 提供转换能力
+- [撸猫云魔法 MerlinClash](https://t.me/s/merlinclashcat) 路由器上好用的 Clash 应用
+- [limbopro/Profiles4limbo](https://github.com/limbopro/Profiles4limbo) 类似本仓库所做的事，但更面向大众

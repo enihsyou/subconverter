@@ -29,13 +29,6 @@ merlinclash_deduplicated.yaml: merlinclash.yaml
 	uv pip install ruamel-yaml==0.18.10
 	uv run scripts/deduplicate_rules.py $<
 
-gistconf.ini:
-	copy gistconf.example.ini gistconf.ini
-
-.PHONY: gist
-gist: merlinclash_deduplicated.yaml
-	uv run scripts/gist_uploader.py $< --filename "merlinclash.yaml"
-
 .PHONY: clean
 clean:
 	del /Q subconverter.exe
