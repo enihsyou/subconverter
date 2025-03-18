@@ -8,6 +8,7 @@
 - 适合低功耗设备，移除了广告拦截等巨大规则集
 - 使用 .env 文件或环境变量传递订阅链接，整个代码库可公开上传
 - 自动发布到私有 Gist 给 Merlin Clash 使用
+- 自动触发 Merlin Clash 的更新订阅动作
 
 ## 为什么有这个项目
 
@@ -80,6 +81,13 @@ Gist 的地址应该是已知的，或者提前 `make gist` 过了。因为 Gist
 为了让生成的配置清爽一些，编写了 [deduplicate_rules.py](scripts/deduplicate_rules.py) 去除重复的规则条目，只保留第一个条目。
 
 使用 `make merlinclash_deduplicated.yaml` 就能运行它。
+
+### 手动触发
+
+Merlin Clash 带有自动触发更新订阅的功能，但快速迭代期间除了在本地使用订阅，想要在路由器上快速生效每次都得在页面上手动点更新有些麻烦。
+所以有了 [apply_merlinclash.js](scripts/apply_merlinclash.js) 脚本，可以自动触发更新订阅动作。
+
+它有两个默认值，分别是配置名和路由器地址，但可以通过命令行参数覆盖。
 
 ## 引用致谢
 

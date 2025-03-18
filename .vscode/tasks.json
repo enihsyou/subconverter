@@ -64,6 +64,20 @@
                     ]
                 }
             ]
+        },
+        {
+            "label": "apply merlinclash",
+            // PATH from fnm on Windows is not injected due to bugs in vscode
+            // https://github.com/microsoft/vscode/issues/240901
+            "type": "shell", 
+            "command": "node",
+            "args": [
+                "scripts/apply_merlinclash.js"
+            ],
+            "presentation": {
+                "clear": true
+            },
+            "problemMatcher": []
         }
     ]
 }
