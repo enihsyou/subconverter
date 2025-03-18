@@ -5,6 +5,7 @@ on:
     paths-ignore:
       - README.md
       - LICENCE
+      - .vscode/**
 
 env:
   SUBCONVERTER_VERSION: v0.9.0

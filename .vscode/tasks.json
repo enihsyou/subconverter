@@ -26,6 +26,44 @@
                 "clear": true
             },
             "problemMatcher": []
+        },
+        {
+            "label": "lint subconverter-config.ini",
+            "type": "process",
+            "command": "rg",
+            "args": [
+                "--regexp",
+                "ruleset=.+\\.ya?ml",
+                "--no-stats",
+                "--column",
+                "--with-filename",
+                "subconverter-config.ini"
+            ],
+            "presentation": {
+                "reveal": "never",
+                "panel": "shared",
+                "clear": true,
+                "focus": false
+            },
+            "problemMatcher": [
+                {
+                    "source": "tasks.json",
+                    "owner": "rg",
+                    "pattern": [
+                        {
+                            "regexp": "^([^\\s].*)$",
+                            "file": 1
+                        },
+                        {
+                            "regexp": "^(\\d+):(\\d+):(.*)$",
+                            "line": 1,
+                            "column": 2,
+                            "message": 3,
+                            "loop": true
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

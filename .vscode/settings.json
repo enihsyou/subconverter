@@ -1,0 +1,7 @@
+{
+    "triggerTaskOnSave.tasks": {
+        "lint subconverter-config.ini": [
+            "*.ini"
+        ]
+    }
+}
