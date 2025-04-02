@@ -4,11 +4,11 @@
 
 可以投喂给 subconverter 的配置文件，用于跑在 Merlin Clash 上。
 
-- 目标中国大陆网络环境，补上大集合漏的部分
+- 适合中国大陆网络环境，补上大集合漏的部分
 - 适合低功耗设备，移除了广告拦截等巨大规则集
-- 使用 .env 文件或环境变量传递订阅链接，整个代码库可公开上传
+- 使用 .env 文件传递订阅链接，整个代码库可公开上传
 - 自动发布到私有 Gist 给 Merlin Clash 使用
-- 自动触发 Merlin Clash 的更新订阅动作
+- 半自动触发 Merlin Clash 的更新订阅动作
 
 ## 为什么有这个项目
 
@@ -40,10 +40,28 @@ make gistconf.ini
 
 ## 如何在 Merlin Clash 应用
 
-### 只使用规则
+### 方式一 只使用规则
 
 参考 [Merlin Clash Wiki - 高级订阅方式](https://mcreadme.gitbook.io/mc/base/subscribe#gao-ji-ding-yue-fang-shi) 所述的界面截图，
-在 **<ins>Clash订阅下载</ins>** 一栏填上 Gist 的 Raw 文件地址，再点击 **<ins>Clash订阅</ins>**。
+在 **<ins>远程配置</ins>** 一栏填上 [subconverter-config.ini](subconverter-config.ini) 的 Raw 文件地址，并 **<ins>勾选使用</ins>**。
+
+```plaintext
+https://github.com/enihsyou/subconverter/tree/main/subconverter-config.ini
+```
+
+其他配置我一般这样选
+
+- [ ] emoji
+- [x] 启用udp
+- [ ] 节点类型
+- [ ] 节点排序
+- [ ] 过滤非法节点
+- [ ] 跳过证书验证
+- [x] TCP Fast Open
+
+### 方式二 使用包含节点的订阅
+
+同样参考界面截图，在 **<ins>Clash订阅下载</ins>** 一栏填上 Gist 的 Raw 文件地址，再点击 **<ins>Clash订阅</ins>**。
 
 Gist 的地址应该是已知的，或者提前 `make gist` 过了。因为 Gist 内容带有订阅链接所以不能在这里贴出来。
 
