@@ -1,0 +1,5 @@
+# code: language=ini
+# 涵盖文件下载服务器
+DOMAIN-SUFFIX,gofile.io
+# 镜像加速器
+DOMAIN-SUFFIX,1ms.run
