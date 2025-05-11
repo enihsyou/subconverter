@@ -21,11 +21,14 @@ subconverter.exe:
 	7z e subconverter.7z subconverter/subconverter.exe
 	del .\subconverter.7z
 
+.venv:
+	uv venv
+
 .PHONY: merlinclash.yaml
 merlinclash.yaml:
 	.\subconverter.exe -g
 
-merlinclash_deduplicated.yaml: merlinclash.yaml
+merlinclash_deduplicated.yaml: merlinclash.yaml .venv
 	uv pip install ruamel-yaml==0.18.10
 	uv run scripts/deduplicate_rules.py $<
 
