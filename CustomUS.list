@@ -1,0 +1,5 @@
+# code: language=ini
+# 需要美国 IP 的规则
+
+# 容易触发 429 错误
+DOMAIN-SUFFIX,imgur.com
