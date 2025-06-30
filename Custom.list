@@ -9,3 +9,5 @@ DOMAIN-SUFFIX,dash.cloudflare.com
 # https://github.com/blackmatrix7/ios_rule_script/issues/1449
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,cangku.moe
+# Steam 时常被干扰
+DOMAIN,images.steamusercontent.com
