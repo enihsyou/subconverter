@@ -7,6 +7,11 @@ on:
       - LICENCE
       - .vscode/**
 
+  schedule:
+    # UTC+0 At 20:00 on Sunday =
+    # UTC+8 At 04:00 on Monday
+    - cron: '0 20 * * 0'
+
 env:
   SUBCONVERTER_VERSION: v0.9.0
 

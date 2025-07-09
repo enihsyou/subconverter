@@ -38,6 +38,8 @@ GitHub Actions 需要配置几个机密变量
 - `GIST_TOKEN` 上传用的 Gist token，可在[GitHub Settings](https://github.com/settings/tokens/new?scopes=gist&description=Subconverter)创建
 - `SUBSCRIPTION_URL` 机场订阅链接
 
+重新运行 GitHub Action 生成 Gist 可更新订阅源。
+
 ## 如何在 Merlin Clash 应用
 
 ### 方式一 只使用规则
