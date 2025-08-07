@@ -3,6 +3,9 @@
 DOMAIN-SUFFIX,gofile.io
 # 镜像加速器
 DOMAIN-SUFFIX,1ms.run
+DOMAIN,docker.gh-proxy.com
+DOMAIN,docker-mirror.kokomi.site
+DOMAIN,docker.xuanyuan.me
 
 # 可设置镜像的软件仓库，强制绕过代理避免刷流量并提醒自己设镜像
 DOMAIN-SUFFIX,dl-cdn.alpinelinux.org
