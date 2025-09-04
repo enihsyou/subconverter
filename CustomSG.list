@@ -8,3 +8,5 @@ DOMAIN,ai.google.dev
 DOMAIN,aistudio.google.com
 DOMAIN,gemini.google.com
 DOMAIN,generativelanguage.googleapis.com
+# Google AI mode 不支持 HK
+DOMAIN-KEYWORD,google
