@@ -65,6 +65,8 @@ https://github.com/enihsyou/subconverter/tree/main/subconverter-config.ini
 
 > 我当前使用的，也是建议的方式
 
+复刻这个仓库，修改 GitHub Action 的[变量](#如何生成-clash-配置文件)为适合自己的值。
+
 同样参考界面截图，在 **<ins>Clash订阅下载</ins>** 一栏填上 Gist 的 Raw 文件地址，再点击 **<ins>Clash订阅</ins>**。
 
 Gist 的地址应该是已知的（`GIST_TOKEN` 环境变量）。因为 Gist 内容带有订阅链接所以不能在这里贴出来。
