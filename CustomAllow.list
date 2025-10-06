@@ -14,3 +14,7 @@ DOMAIN-SUFFIX,ports.ubuntu.com
 DOMAIN-SUFFIX,rubygems.org
 DOMAIN-SUFFIX,pypi.org
 DOMAIN-SUFFIX,crates.io
+
+# 测速或许没必要走代理，还有一些可以直连的
+DOMAIN,speed.cloudflare.com
+DOMAIN,radar.cloudflare.com

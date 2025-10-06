@@ -13,3 +13,6 @@ DOMAIN,images.steamusercontent.com
 
 # Let's Encrypt 域名被干扰致使 CRL 无法下载，间接导致断网
 DOMAIN,e6.c.lencr.org
+
+# A Google-owned short link domain found in Emails.
+DOMAIN,c.gle
