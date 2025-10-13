@@ -7,6 +7,12 @@ DOMAIN,docker.gh-proxy.com
 DOMAIN,docker-mirror.kokomi.site
 DOMAIN,docker.xuanyuan.me
 
+# 下载加速器
+DOMAIN,wget.la
+DOMAIN,gh-proxy.com
+DOMAIN,ghproxy.net
+DOMAIN-SUFFIX,jsdelivr.net
+
 # 可设置镜像的软件仓库，强制绕过代理避免刷流量并提醒自己设镜像
 DOMAIN-SUFFIX,dl-cdn.alpinelinux.org
 DOMAIN-SUFFIX,deb.debian.org
