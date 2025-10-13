@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 // 在 ASUS 路由器的 MerlinClash 中更新订阅以应用最新规则列表
+// Deprecated: 在 Firmware 3004.388.9_2 版本发现，接口需要 asus_s_token Cookie 了
+
 const argv = [...process.argv, '', ''].slice(2);
 const profile = argv[0] || "sspgist";
 const host = argv[1] || process.env.ASUS_HOST || "http://www.asusrouter.com";
