@@ -26,3 +26,4 @@ DOMAIN,pkg-containers.githubusercontent.com
 # 测速或许没必要走代理，还有一些可以直连的
 DOMAIN,speed.cloudflare.com
 DOMAIN,radar.cloudflare.com
+DOMAIN-SUFFIX,test-ipv6.com
