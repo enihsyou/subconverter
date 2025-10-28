@@ -27,3 +27,5 @@ DOMAIN,pkg-containers.githubusercontent.com
 DOMAIN,speed.cloudflare.com
 DOMAIN,radar.cloudflare.com
 DOMAIN-SUFFIX,test-ipv6.com
+# 避免来源 IP 被拦截
+DOMAIN,api.cloudflare.com
