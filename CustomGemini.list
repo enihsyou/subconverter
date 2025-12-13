@@ -1,5 +1,5 @@
 # code: language=ini
-# 需要新加坡 IP 的规则
+# 需要支持使用 Gemini 的规则
 
 # 已经在 blackmatrix7/ios_rule_script Gemini/Gemini.list 包含了 DOMAIN-SUFFIX
 # 可是还有一部分被 ACL4SSR/ACL4SSR Clash/ProxyMedia.list 覆盖用的 DOMAIN 规则
