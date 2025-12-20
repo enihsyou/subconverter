@@ -1,6 +1,4 @@
 # code: language=ini
-# 涵盖文件下载服务器
-DOMAIN-SUFFIX,gofile.io
 # 镜像加速器
 DOMAIN-SUFFIX,1ms.run
 DOMAIN,docker.gh-proxy.com
@@ -29,3 +27,6 @@ DOMAIN,radar.cloudflare.com
 DOMAIN-SUFFIX,test-ipv6.com
 # 避免来源 IP 被拦截
 DOMAIN,api.cloudflare.com
+
+# Intranet
+DOMAIN,lan.kokomi.site
