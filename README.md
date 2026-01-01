@@ -10,6 +10,8 @@
 - 自动发布到私有 Gist 给 Merlin Clash 使用
 - 半自动触发 Merlin Clash 的更新订阅动作
 
+> NOTE: 若上游订阅源设有订阅链接激活策略，除非提供 OpenAPI 否则不适用本项目，还得手动更新订阅。
+
 ## 为什么有这个项目
 
 目前 Merlin Clash 有非常方便的图形界面设置 [自定规则](https://mcreadme.gitbook.io/mc/advanced/custom)，

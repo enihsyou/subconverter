@@ -32,6 +32,11 @@ merlinclash_deduplicated.yaml: merlinclash.yaml .venv
 	uv pip install ruamel-yaml==0.18.10
 	uv run scripts/deduplicate_rules.py $<
 
+.PHONY: upload_gist
+upload_gist: merlinclash_deduplicated.yaml
+	uv pip install PyGithub==2.8.1
+	uv run scripts/upload_gist.py $< merlinclash.yaml
+
 .PHONY: clean
 clean:
 	del /Q subconverter.exe
