@@ -4,11 +4,15 @@ DOMAIN-SUFFIX,1ms.run
 DOMAIN,docker.gh-proxy.com
 DOMAIN,docker-mirror.kokomi.site
 DOMAIN,docker.xuanyuan.me
+DOMAIN-SUFFIX,m.ixdev.cn
+
+# 防止跑流量
+DOMAIN,registry-1.docker.io
 
 # 下载加速器
-DOMAIN,wget.la
-DOMAIN,gh-proxy.com
-DOMAIN,ghproxy.net
+DOMAIN-SUFFIX,wget.la
+DOMAIN-SUFFIX,gh-proxy.com
+DOMAIN-SUFFIX,ghproxy.net
 DOMAIN-SUFFIX,jsdelivr.net
 
 # 可设置镜像的软件仓库，强制绕过代理避免刷流量并提醒自己设镜像
@@ -30,3 +34,5 @@ DOMAIN,api.cloudflare.com
 
 # Intranet
 DOMAIN,lan.kokomi.site
+DOMAIN,pve.kokomi.site
+DOMAIN,home.kokomi.site

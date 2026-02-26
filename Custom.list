@@ -10,8 +10,10 @@ DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,cangku.moe
 # Steam 时常被干扰
 DOMAIN,images.steamusercontent.com
+DOMAIN,store.epicgames.com
 DOMAIN,expressive-code.com
 DOMAIN,www.fastwave.tw
+DOMAIN,humanbenchmark.com
 
 # Let's Encrypt 域名被干扰致使 CRL 无法下载，间接导致断网
 DOMAIN,e6.c.lencr.org

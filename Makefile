@@ -26,6 +26,7 @@ subconverter.exe:
 
 .PHONY: merlinclash.yaml
 merlinclash.yaml:
+	open "https://s1.thefew01.top"
 	.\subconverter.exe -g
 
 merlinclash_deduplicated.yaml: merlinclash.yaml .venv
