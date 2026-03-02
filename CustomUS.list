@@ -3,3 +3,7 @@
 
 # 容易触发 429 错误
 DOMAIN-SUFFIX,imgur.com
+
+# Anthropic
+DOMAIN-KEYWORD,claude
+DOMAIN-SUFFIX,anthropic.com

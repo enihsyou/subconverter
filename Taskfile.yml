@@ -1,0 +1,55 @@
+version: "3"
+
+vars:
+  VERSION: "v0.9.0"
+
+tasks:
+  .subconverter_env:
+    desc: "Create .subconverter_env placeholder and inform the user"
+    cmds:
+      - touch .subconverter_env
+      - echo "paste your subscription url to .subconverter_env"
+
+  subconverter.exe:
+    desc: "Download and extract subconverter"
+    platforms: [windows]
+    cmds:
+      - xh --download "https://github.com/tindy2013/subconverter/releases/download/{{.VERSION}}/subconverter_win64.7z"
+      - 7z e subconverter_win64.7z subconverter/subconverter.exe
+      - mv subconverter/subconverter.exe ./subconverter.exe
+      - rm -f subconverter_win64.7z
+    status:
+      - test -f subconverter.exe
+
+  merlinclash.yaml:
+    desc: "Generate merlinclash.yaml using subconverter"
+    platforms: [windows]
+    deps:
+      - subconverter.exe
+    cmds:
+      - rundll32 url.dll,FileProtocolHandler "https://s1.thefew01.top"
+      - read -p "激活链接后按任意键继续... " -s
+      - ./subconverter.exe -g
+
+  merlinclash_deduplicated.yaml:
+    desc: "Deduplicate merlinclash rules"
+    deps:
+      - merlinclash.yaml
+    cmds:
+      - uv pip install ruamel-yaml==0.18.10
+      - uv run scripts/deduplicate_rules.py merlinclash.yaml
+
+  upload_gist:
+    desc: "Upload deduplicated merlinclash to a gist"
+    deps:
+      - merlinclash_deduplicated.yaml
+    cmds:
+      - uv pip install PyGithub==2.8.1
+      - uv run scripts/upload_gist.py merlinclash_deduplicated.yaml merlinclash.yaml
+
+  clean:
+    desc: "Remove generated files"
+    cmds:
+      - rm -f subconverter.exe
+      - rm -f merlinclash.yaml
+      - rm -f merlinclash_deduplicated.yaml
