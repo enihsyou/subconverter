@@ -4,3 +4,47 @@ allow-lan: true
 mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
+
+ipv6: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: false
+  force-domain:
+    - '+.v2ex.com'
+  skip-domain:
+    - 'Mijia Cloud'
+    - 'dlg.io.mi.com'
+    - '+.apple.com'
+  skip-src-address:
+    # cdnmirror on Homelab
+    - 192.168.2.99/32
+dns:
+  enable: true
+  ipv6: true
+  listen: :23453
+  use-hosts: true
+  use-system-hosts: true
+  # required by ssp, otherwise node won't connect
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-range6: fdfe:dcba:9876::1/64
+  fake-ip-filter-mode: whitelist
+  fake-ip-filter:
+    - 'geosite: gfw'
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+    - 180.76.76.76
+  nameserver-policy:
+    # required by ssp
+    '*.bestvmr.com': 47.110.75.65:8053
+    "geosite: gfw":
+      - 119.29.29.29

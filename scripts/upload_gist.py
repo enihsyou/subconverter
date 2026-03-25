@@ -29,7 +29,7 @@ def main():
 
     upload_content = Path(upload_file).read_text(encoding="utf-8")
 
-    g = Github(auth=Auth.Token(token))
+    g = Github(auth=Auth.Token(token), timeout=30)
 
     try:
         gist = g.get_gist(gist_id)
