@@ -7,3 +7,6 @@ DOMAIN-SUFFIX,imgur.com
 # Anthropic
 DOMAIN-KEYWORD,claude
 DOMAIN-SUFFIX,anthropic.com
+
+# 能直连，但代理速度更快
+DOMAIN,dojo.pwn.college
