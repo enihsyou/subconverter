@@ -36,6 +36,7 @@ tasks:
     cmds:
       - uv pip install ruamel-yaml==0.18.10
       - uv run scripts/deduplicate_rules.py merlinclash.yaml
+      - sed -i '/PROCESS-NAME/d' merlinclash_deduplicated.yaml
 
   upload_gist:
     desc: "Upload deduplicated merlinclash to a gist"
