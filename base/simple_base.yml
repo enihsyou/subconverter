@@ -40,9 +40,8 @@ dns:
   fake-ip-filter:
     - 'geosite: gfw'
   nameserver:
-    - 119.29.29.29
+    # minimum latency among others
     - 223.5.5.5
-    - 180.76.76.76
   nameserver-policy:
     # required by ssp
     '*.bestvmr.com': 47.110.75.65:8053

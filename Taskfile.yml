@@ -27,8 +27,6 @@ tasks:
     deps:
       - subconverter.exe
     cmds:
-      - rundll32 url.dll,FileProtocolHandler "https://s1.thefew01.top"
-      - read -p "确认订阅有效后按任意键继续... " -s
       - ./subconverter.exe -g
 
   merlinclash_deduplicated.yaml:
