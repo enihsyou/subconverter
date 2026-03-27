@@ -20,3 +20,6 @@ DOMAIN,e6.c.lencr.org
 
 # A Google-owned short link domain found in Emails.
 DOMAIN,c.gle
+
+# https://github.com/jsdelivr/jsdelivr/issues/18397
+DOMAIN,cdn.jsdelivr.net
