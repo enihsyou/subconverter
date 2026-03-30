@@ -26,24 +26,18 @@ sniffer:
   skip-src-address:
     # cdnmirror on Homelab
     - 192.168.2.99/32
+
 dns:
   enable: true
   ipv6: true
   listen: :23453
   use-hosts: true
   use-system-hosts: true
-  # required by ssp, otherwise node won't connect
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-range6: fdfe:dcba:9876::1/64
-  fake-ip-filter-mode: whitelist
-  fake-ip-filter:
-    - 'geosite: gfw'
+  # fake-ip 会阻拦 iframe 的加载，不推荐使用
+  enhanced-mode: redir-host
   nameserver:
     # minimum latency among others
     - 223.5.5.5
   nameserver-policy:
-    # required by ssp
-    '*.bestvmr.com': 47.110.75.65:8053
-    "geosite: gfw":
-      - 119.29.29.29
+    # 解析节点域名所必要
+    "*.bestvmr.com": 47.110.75.65:8053
