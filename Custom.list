@@ -1,9 +1,12 @@
 # code: language=ini
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,greasyfork.org
+# 加速下载
 DOMAIN-SUFFIX,formulae.brew.sh
 DOMAIN-SUFFIX,pythonhosted.org
 DOMAIN-SUFFIX,packages.synocommunity.com
+DOMAIN-SUFFIX,cdn.snapcraftcontent.com
+
 DOMAIN-SUFFIX,dash.cloudflare.com
 # https://github.com/blackmatrix7/ios_rule_script/issues/1449
 DOMAIN-SUFFIX,aistudio.google.com
@@ -14,6 +17,7 @@ DOMAIN,store.epicgames.com
 DOMAIN,expressive-code.com
 DOMAIN,www.fastwave.tw
 DOMAIN,humanbenchmark.com
+DOMAIN,gist.github.com
 
 # Let's Encrypt 域名被干扰致使 CRL 无法下载，间接导致断网
 DOMAIN,e6.c.lencr.org
