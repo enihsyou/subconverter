@@ -18,6 +18,7 @@ DOMAIN,expressive-code.com
 DOMAIN,www.fastwave.tw
 DOMAIN,humanbenchmark.com
 DOMAIN,gist.github.com
+DOMAIN,aistupidlevel.info
 
 # Let's Encrypt 域名被干扰致使 CRL 无法下载，间接导致断网
 DOMAIN,e6.c.lencr.org

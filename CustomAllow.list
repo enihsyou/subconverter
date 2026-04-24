@@ -2,12 +2,9 @@
 # 镜像加速器
 DOMAIN-SUFFIX,1ms.run
 DOMAIN,docker.gh-proxy.com
-DOMAIN,docker-mirror.kokomi.site
+DOMAIN,docker.gh-proxy.org
 DOMAIN,docker.xuanyuan.me
 DOMAIN-SUFFIX,m.ixdev.cn
-
-# 防止跑流量
-DOMAIN,registry-1.docker.io
 
 # 下载加速器
 DOMAIN-SUFFIX,wget.la
