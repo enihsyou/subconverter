@@ -1,7 +1,7 @@
 version: "3"
 
 vars:
-  VERSION: "v0.9.0"
+  VERSION: "v0.9.2"
 
 tasks:
   .subconverter_env:
@@ -14,9 +14,8 @@ tasks:
     desc: "Download and extract subconverter"
     platforms: [windows]
     cmds:
-      - xh --download "https://github.com/tindy2013/subconverter/releases/download/{{.VERSION}}/subconverter_win64.7z"
+      - xh --download "https://github.com/metacubex/subconverter/releases/download/{{.VERSION}}/subconverter_win64.7z"
       - 7z e subconverter_win64.7z subconverter/subconverter.exe
-      - mv subconverter/subconverter.exe ./subconverter.exe
       - rm -f subconverter_win64.7z
     status:
       - test -f subconverter.exe

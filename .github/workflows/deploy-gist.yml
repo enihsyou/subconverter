@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 env:
-  SUBCONVERTER_VERSION: v0.9.0
+  SUBCONVERTER_VERSION: v0.9.2
 
 jobs:
   execute:
@@ -28,7 +28,7 @@ jobs:
       - name: Download subconverter
         uses: robinraju/release-downloader@v1
         with:
-          repository: tindy2013/subconverter
+          repository: metacubex/subconverter
           tag: ${{ env.SUBCONVERTER_VERSION }}
           fileName: subconverter_linux64.tar.gz
 
@@ -37,7 +37,7 @@ jobs:
           tar -xzf subconverter_linux64.tar.gz --strip-components=1 subconverter/subconverter
           chmod +x subconverter
           rm subconverter_linux64.tar.gz
-          
+
       - name: Create merlinclash.yaml
         env:
           SUBCONVERTER_SUBSCRIPTION_URL: ${{ secrets.SUBSCRIPTION_URL }}
@@ -61,6 +61,7 @@ jobs:
         run: |
           uv pip install ruamel-yaml==0.18.10
           uv run scripts/deduplicate_rules.py merlinclash.yaml --in-place
+          sed -i '/PROCESS-NAME/d' merlinclash.yaml
 
       - name: Deploy to Gist
         uses: exuanbo/actions-deploy-gist@v1
