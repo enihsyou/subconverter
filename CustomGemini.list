@@ -10,3 +10,7 @@ DOMAIN,gemini.google.com
 DOMAIN,generativelanguage.googleapis.com
 # Google AI mode 不支持 HK
 DOMAIN-KEYWORD,google
+
+# HK IP is blocked
+DOMAIN,api.groq.com
+DOMAIN,console.groq.com
