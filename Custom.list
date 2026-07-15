@@ -1,6 +1,9 @@
 # code: language=ini
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,greasyfork.org
+# OpenAI ChatGPT
+DOMAIN-SUFFIX,oaistatsig.com
+DOMAIN-SUFFIX,oaistatic.com
 # 加速下载
 DOMAIN-SUFFIX,formulae.brew.sh
 DOMAIN-SUFFIX,pythonhosted.org

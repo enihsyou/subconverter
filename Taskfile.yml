@@ -41,9 +41,13 @@ tasks:
     desc: "Upload deduplicated merlinclash to a gist"
     deps:
       - merlinclash_deduplicated.yaml
+    dotenv:
+      # Put Gist ID in the .env file as APP_GIST_ID
+      - .env
+    preconditions:
+      - test -n "$APP_GIST_ID"
     cmds:
-      - uv pip install PyGithub==2.8.1
-      - uv run scripts/upload_gist.py merlinclash_deduplicated.yaml merlinclash.yaml
+      - gh gist edit $APP_GIST_ID -f merlinclash.yaml merlinclash_deduplicated.yaml
 
   clean:
     desc: "Remove generated files"
