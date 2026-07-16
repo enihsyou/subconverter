@@ -31,3 +31,6 @@ DOMAIN,c.gle
 
 # https://github.com/jsdelivr/jsdelivr/issues/18397
 DOMAIN,cdn.jsdelivr.net
+
+# 直连性能差
+DOMAIN,dojo.pwn.college
