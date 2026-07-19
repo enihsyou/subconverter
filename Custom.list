@@ -6,6 +6,8 @@ DOMAIN-SUFFIX,oaistatsig.com
 DOMAIN-SUFFIX,oaistatic.com
 # 加速下载
 DOMAIN-SUFFIX,formulae.brew.sh
+# uv self update 直连下载速度慢
+DOMAIN,releases.astral.sh
 DOMAIN-SUFFIX,pythonhosted.org
 DOMAIN-SUFFIX,packages.synocommunity.com
 DOMAIN-SUFFIX,cdn.snapcraftcontent.com
