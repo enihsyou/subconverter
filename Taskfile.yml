@@ -49,6 +49,21 @@ tasks:
     cmds:
       - gh gist edit $APP_GIST_ID -f merlinclash.yaml merlinclash_deduplicated.yaml
 
+  reload_conf:
+    desc: "Trigger a reload of MerlinClash on the ASUS router"
+    vars:
+      # Override on the command line, e.g.: task reload_conf PROFILE=AP_ssp
+      PROFILE: '{{.PROFILE | default "AP_ssp"}}'
+    dotenv:
+      # .env carries ASUS_HOST / ASUS_USER / ASUS_PASS
+      - .env
+    preconditions:
+      - test -n "$ASUS_HOST"
+      - test -n "$ASUS_USER"
+      - test -n "$ASUS_PASS"
+    cmds:
+      - node scripts/apply_merlinclash.js {{.PROFILE}}
+
   clean:
     desc: "Remove generated files"
     cmds:
