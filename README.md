@@ -14,7 +14,7 @@
 
 ## 为什么有这个项目
 
-目前 Merlin Clash 有非常方便的图形界面设置 [自定规则](https://mcreadme.gitbook.io/mc/advanced/custom)，
+目前 Merlin Clash (Magic Catling 2 v0.6.7.A64) 有非常方便的图形界面设置 [自定规则](https://mcreadme.gitbook.io/mc/advanced/custom)，
 但是实现上它是把每条规则一点点 `sed` 合并进 clash 配置文件里的，在 RT-AX86U 上添加 15 条规则花费 30s。
 
 因为不能动态添加规则，有时遇到无法访问的网站我会手动添加一些，再等待系统花费 60s+ 重启。
@@ -27,9 +27,8 @@
 在 Windows 本地运行这是几个主要步骤
 
 ```shell-session
-make subconverter.exe              # 拉取最新的 subconverter
-make merlinclash_deduplicated.yaml # 生成去重的配置文件
-node scripts/apply_merlinclash.js  # 在路由器上应用
+task upload_gist  # 生成去重的配置文件并上传到 Gist
+task reload_conf  # 在路由器上应用
 ```
 
 更多地是使用 [GitHub Actions](.github/workflows/deploy-gist.yml) 在 Linux 环境自动构建。
@@ -83,14 +82,14 @@ Gist 的地址应该是已知的（`GIST_TOKEN` 环境变量）。因为 Gist �
 
 ### 依赖更新
 
-内建了 `make subconverter.exe` 用以拉取最新的 release。但也可以手动切换到 nightly 版。
+内建了 `task subconverter.exe` 用以拉取最新的 release。但也可以手动切换到 nightly 版。
 
 访问 <https://github.com/tindy2013/subconverter/actions/workflows/build.yml> 寻找最新的构建，
 定位到 `Windows amd64 build` 任务，点击 `Upload` 步骤中的 `Artifact download URL` 进行下载
 
 ### 获取订阅
 
-在 `make merlinclash.yaml` 生成指令调用的 [generate.ini](generate.ini) 中，引用了写在 [subconverter-profile.ini](subconverter-profile.ini) 的一组档案。
+在 `task merlinclash.yaml` 生成指令调用的 [generate.ini](generate.ini) 中，引用了写在 [subconverter-profile.ini](subconverter-profile.ini) 的一组档案。
 
 但档案里的 `url` 并没有真实的订阅链接，而是一条利用 subconverter [动态特性]的 `script:`，在运行时会调用 [subscription-secret.js](subscription-secret.js) 脚本（注意这个特性存在[RCE风险]）。
 
@@ -106,7 +105,7 @@ Gist 的地址应该是已知的（`GIST_TOKEN` 环境变量）。因为 Gist �
 
 为了让生成的配置清爽一些，编写了 [deduplicate_rules.py](scripts/deduplicate_rules.py) 去除重复的规则条目，只保留第一个条目。
 
-使用 `make merlinclash_deduplicated.yaml` 就能运行它。
+使用 `task merlinclash_deduplicated.yaml` 就能运行它。
 
 ### 手动触发
 
