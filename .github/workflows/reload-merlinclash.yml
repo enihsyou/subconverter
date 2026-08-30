@@ -1,0 +1,28 @@
+name: Reload MerlinClash
+
+on:
+  workflow_run:
+    workflows: ["Deploy to Gist"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  reload:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Reload MerlinClash
+        env:
+          ASUS_HOST: ${{ vars.ASUS_HOST }}
+          ASUS_PROFILE: ${{ vars.ASUS_PROFILE }}
+          ASUS_USER: ${{ secrets.ASUS_USER }}
+          ASUS_PASS: ${{ secrets.ASUS_PASS }}
+        run: node scripts/apply_merlinclash.js "$ASUS_PROFILE"
