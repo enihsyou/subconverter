@@ -32,6 +32,9 @@ DOMAIN-SUFFIX,test-ipv6.com
 # 避免来源 IP 被拦截
 DOMAIN,api.cloudflare.com
 
+# 应直连的域名
+DOMAIN-SUFFIX,argotunnel.com
+
 # Intranet
 DOMAIN-SUFFIX,lan.kokomi.site
 DOMAIN-SUFFIX,pve.kokomi.site
