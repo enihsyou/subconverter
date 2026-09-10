@@ -34,6 +34,7 @@ DOMAIN,api.cloudflare.com
 
 # 应直连的域名
 DOMAIN-SUFFIX,argotunnel.com
+DOMAIN,aliyun-jp.251s.cloud
 
 # Intranet
 DOMAIN-SUFFIX,lan.kokomi.site
