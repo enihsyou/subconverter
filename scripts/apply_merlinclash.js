@@ -3,7 +3,7 @@
 // 通过 login.cgi 登录拿 asus_token，再 POST /_api/ 触发 clash_subscribe.sh update
 //
 // 用法：node scripts/apply_merlinclash.js <profile> [host]
-//   profile  配置文件名（HAR 中对应 merlinclash_delyamlsel）
+//   profile  配置文件名（HAR 中对应 merlinclash_set_yamlsel_edit）
 //   host     路由器地址，默认 http://www.asusrouter.com
 //   用户密码走 env: ASUS_USER / ASUS_PASS，host 也可走 env: ASUS_HOST
 //   调试：env APP_DEBUG=1 输出每个 HTTP 请求/响应
@@ -114,7 +114,7 @@ class MerlinClash {
       method: "clash_subscribe.sh",
       params: ["update"],
       fields: {
-        merlinclash_delyamlsel: profile,
+        merlinclash_set_yamlsel_edit: profile,
         merlinclash_action: "2",
       },
     });
