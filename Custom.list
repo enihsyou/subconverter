@@ -25,6 +25,9 @@ DOMAIN,humanbenchmark.com
 DOMAIN,gist.github.com
 DOMAIN,aistupidlevel.info
 
+# 来源 IP 影响 CDN 域名，中国大陆会分配到无法解析的 vsassetscdn.azure.cn 而不是正常的 cdn.vsassets.io
+DOMAIN,marketplace.visualstudio.com
+
 # Let's Encrypt 域名被干扰致使 CRL 无法下载，间接导致断网
 DOMAIN,e6.c.lencr.org
 
