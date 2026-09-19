@@ -35,6 +35,7 @@ DOMAIN,api.cloudflare.com
 # 应直连的域名
 DOMAIN-SUFFIX,argotunnel.com
 DOMAIN-SUFFIX,nilou.workers.dev
+DOMAIN-SUFFIX,ttl.sh
 DOMAIN,aliyun-jp.251s.cloud
 
 # Intranet
