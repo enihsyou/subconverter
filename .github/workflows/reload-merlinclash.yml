@@ -5,6 +5,7 @@ on:
     workflows: ["Deploy to Gist"]
     types: [completed]
 
+  workflow_dispatch:
 permissions:
   contents: read
 
@@ -25,4 +26,5 @@ jobs:
           ASUS_PROFILE: ${{ vars.ASUS_PROFILE }}
           ASUS_USER: ${{ secrets.ASUS_USER }}
           ASUS_PASS: ${{ secrets.ASUS_PASS }}
+          APP_DEBUG: 1
         run: node scripts/apply_merlinclash.js "$ASUS_PROFILE"
