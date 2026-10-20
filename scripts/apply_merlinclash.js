@@ -10,7 +10,13 @@
 
 // APP_DEBUG 在 truthy 时输出 HTTP 请求/响应摘要（方法/路径/状态/字节数）
 const DEBUG = ['1', 'true', 'yes', 'on'].includes(String(process.env.APP_DEBUG || '').toLowerCase());
-function dbg(...args) { if (DEBUG) console.error('[REQ]', ...args); }
+function redactLog(value) {
+  return String(value).replace(/((?:asus_token|login_authorization)=)[^;&\s'"]+/gi, '$1***');
+}
+
+function dbg(...args) {
+  if (DEBUG) console.error('[REQ]', redactLog(require('util').format(...args)));
+}
 
 class MerlinClash {
   constructor({ host, user, pass }) {
@@ -194,7 +200,7 @@ async function waitForCompletion(client, initialLog = '') {
     const markerIndex = newLog.indexOf('BBABBBBC');
     const output = markerIndex === -1 ? newLog : newLog.slice(0, markerIndex);
     if (output) {
-      process.stdout.write(output);
+      process.stdout.write(redactLog(output));
     }
     if (markerIndex !== -1) {
       return;
@@ -230,7 +236,7 @@ async function main() {
     await waitForCompletion(client, initialLog);
     console.log('更新完成');
   } catch (error) {
-    console.error('发生错误:', error.message);
+    console.error('发生错误:', redactLog(error.message));
     process.exit(1);
   }
 }

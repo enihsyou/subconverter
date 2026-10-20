@@ -42,12 +42,12 @@ tasks:
     deps:
       - merlinclash_deduplicated.yaml
     dotenv:
-      # Put Gist ID in the .env file as APP_GIST_ID
+      # Put Gist ID in the .env file as GIST_ID
       - .env
     preconditions:
-      - test -n "$APP_GIST_ID"
+      - test -n "$GIST_ID"
     cmds:
-      - gh gist edit $APP_GIST_ID -f merlinclash.yaml merlinclash_deduplicated.yaml
+      - gh gist edit $GIST_ID -f merlinclash.yaml merlinclash_deduplicated.yaml
 
   reload_conf:
     desc: "Trigger a reload of MerlinClash on the ASUS router"

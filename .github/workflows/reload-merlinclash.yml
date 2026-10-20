@@ -26,5 +26,8 @@ jobs:
           ASUS_PROFILE: ${{ vars.ASUS_PROFILE }}
           ASUS_USER: ${{ secrets.ASUS_USER }}
           ASUS_PASS: ${{ secrets.ASUS_PASS }}
-          APP_DEBUG: 1
+          # not used but used to add mask for log
+          SUBCONVERTER_SUBSCRIPTION_URL: ${{ secrets.SUBSCRIPTION_URL }}
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
         run: node scripts/apply_merlinclash.js "$ASUS_PROFILE"
